@@ -14,3 +14,17 @@ jobs:
   release:
     uses: slice-soft/ss-pipeline/.github/workflows/create-release.yml@v0
     secrets: inherit
+
+  docs:
+    needs: release
+    if: needs.release.outputs.release_created == 'true'
+    uses: slice-soft/ss-pipeline/.github/workflows/tf-docs.yml@v0
+    with:
+      ref: ${{ github.sha }}
+      module-paths: |
+        modules/pages
+      commit-message: "docs(terraform): update module documentation"
+      pr-title: "docs(terraform): update module documentation"
+      pr-body: "Automated Terraform module documentation update for ss-cloudflare-modules-iac."
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
