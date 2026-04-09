@@ -32,5 +32,6 @@ Use the example in [examples/pages-custom-domain/main.tf](../examples/pages-cust
 
 - Deployments are expected to happen outside Terraform, usually with Wrangler in CI.
 - Imported Pages projects may still have Git integration configured in Cloudflare. The module ignores that block to avoid a forced recreation.
+- The module also ignores `build_config` drift after creation/import because Cloudflare provider v5 may expose computed web analytics fields there and then reject the corresponding PATCH request.
 - DNS management is optional. If `zone_id` is omitted, the module still creates the Pages project.
 - In Cloudflare provider v5, the DNS resource expects the full record name, so this module reuses `custom_domain` as the managed record FQDN.

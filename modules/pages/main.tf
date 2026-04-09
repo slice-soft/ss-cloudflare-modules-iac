@@ -18,7 +18,12 @@ resource "cloudflare_pages_project" "this" {
   lifecycle {
     # Imported projects may still have Git integration configured.
     # Ignore that block so Terraform does not force destroy and recreate.
-    ignore_changes = [source]
+    #
+    # Cloudflare provider v5 can also surface computed web analytics fields
+    # inside build_config and then fail its own PATCH request on apply.
+    # Keep build_config stable after creation/import until that drift is fixed
+    # upstream, otherwise imported projects can become unappliable.
+    ignore_changes = [source, build_config]
   }
 }
 
