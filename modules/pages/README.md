@@ -39,20 +39,24 @@ module "landing" {
 ## Requirements
 
 | Name | Version |
-| --- | --- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.5.0 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement_cloudflare) | ~> 5.17 |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.17 |
 
 ## Providers
 
 | Name | Version |
-| --- | --- |
-| <a name="provider_cloudflare"></a> [cloudflare](#provider_cloudflare) | ~> 5.17 |
+|------|---------|
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.17 |
+
+## Modules
+
+No modules.
 
 ## Resources
 
 | Name | Type |
-| --- | --- |
+|------|------|
 | [cloudflare_dns_record.cname](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/dns_record) | resource |
 | [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/pages_domain) | resource |
 | [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/pages_project) | resource |
@@ -60,21 +64,21 @@ module "landing" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| --- | --- | --- | --- | --- |
-| <a name="input_account_id"></a> [account_id](#input_account_id) | Cloudflare account ID. | `string` | n/a | yes |
-| <a name="input_build_command"></a> [build_command](#input_build_command) | Command used to build the project. | `string` | `"npm run build"` | no |
-| <a name="input_custom_domain"></a> [custom_domain](#input_custom_domain) | Full custom domain (for example docs.keel-go.dev). Leave empty to skip. | `string` | `""` | no |
-| <a name="input_destination_dir"></a> [destination_dir](#input_destination_dir) | Directory where the build output is placed. | `string` | `"dist"` | no |
-| <a name="input_project_name"></a> [project_name](#input_project_name) | Cloudflare Pages project name (must match the name used in wrangler deploy). | `string` | n/a | yes |
-| <a name="input_root_dir"></a> [root_dir](#input_root_dir) | Project root directory relative to the repository root. | `string` | `""` | no |
-| <a name="input_zone_id"></a> [zone_id](#input_zone_id) | Cloudflare zone ID for the DNS record. Leave empty to skip DNS management. | `string` | `""` | no |
+|------|-------------|------|---------|:--------:|
+| <a name="input_account_id"></a> [account\_id](#input\_account\_id) | Cloudflare account ID. | `string` | n/a | yes |
+| <a name="input_build_command"></a> [build\_command](#input\_build\_command) | Command used to build the project. | `string` | `"npm run build"` | no |
+| <a name="input_custom_domain"></a> [custom\_domain](#input\_custom\_domain) | Full custom domain (for example docs.keel-go.dev). Leave empty to skip. | `string` | `""` | no |
+| <a name="input_destination_dir"></a> [destination\_dir](#input\_destination\_dir) | Directory where the build output is placed. | `string` | `"dist"` | no |
+| <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Cloudflare Pages project name (must match the name used in wrangler deploy). | `string` | n/a | yes |
+| <a name="input_root_dir"></a> [root\_dir](#input\_root\_dir) | Project root directory relative to the repository root. | `string` | `""` | no |
+| <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | Cloudflare zone ID for the DNS record. Leave empty to skip DNS management. | `string` | `""` | no |
 
 ## Outputs
 
 | Name | Description |
-| --- | --- |
-| <a name="output_custom_domain"></a> [custom_domain](#output_custom_domain) | Configured custom domain when enabled. |
-| <a name="output_dns_record_name"></a> [dns_record_name](#output_dns_record_name) | Managed DNS record FQDN when enabled. |
-| <a name="output_project_name"></a> [project_name](#output_project_name) | Cloudflare Pages project name. |
-| <a name="output_subdomain"></a> [subdomain](#output_subdomain) | Default Pages subdomain (for example project.pages.dev). |
+|------|-------------|
+| <a name="output_custom_domain"></a> [custom\_domain](#output\_custom\_domain) | Configured custom domain when enabled. |
+| <a name="output_dns_record_name"></a> [dns\_record\_name](#output\_dns\_record\_name) | Managed DNS record FQDN when enabled. |
+| <a name="output_project_name"></a> [project\_name](#output\_project\_name) | Cloudflare Pages project name. |
+| <a name="output_subdomain"></a> [subdomain](#output\_subdomain) | Default Pages subdomain (for example project.pages.dev). |
 <!-- END_TF_DOCS -->
