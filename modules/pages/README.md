@@ -32,6 +32,7 @@ module "landing" {
 - If `zone_id` is empty, DNS management is skipped.
 - When DNS is managed, the module uses `custom_domain` as the record FQDN for Cloudflare v5 compatibility.
 - Imported Pages projects may still have Git integration in Cloudflare. The module ignores that block to avoid forced recreation.
+- The module also ignores `build_config` updates after creation/import. Cloudflare provider v5 can derive computed analytics fields in that block and then fail the PATCH request with `400/8000006`.
 
 ## Terraform Reference
 

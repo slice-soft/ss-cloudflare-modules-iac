@@ -62,6 +62,7 @@ This repository is prepared to use reusable workflows from `slice-soft/ss-pipeli
 The tag flow is based on `release-please` and keeps the major tag such as `v0` updated automatically.
 
 The first module in this repo targets the Cloudflare Terraform provider v5 schema.
+For imported Pages projects, the `pages` module intentionally ignores `source` and `build_config` updates because Cloudflare provider v5 can emit non-actionable drift and fail PATCH requests for those fields.
 
 ## Repository Layout
 
