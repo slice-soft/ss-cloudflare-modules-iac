@@ -50,14 +50,14 @@ Editorial documentation lives in [docs/](docs/README.md).
 - [docs/pages-module.md](docs/pages-module.md)
 - [docs/releasing.md](docs/releasing.md)
 
-Terraform reference documentation lives inside each module README and is prepared for automatic updates through the reusable `tf-docs.yml` workflow from `ss-pipeline`.
+Terraform reference documentation lives inside each module README and is prepared for automatic updates through the release workflow, which delegates to the reusable `tf-docs.yml` workflow from `ss-pipeline` only after a release is created.
 
 ## Automation
 
 This repository is prepared to use reusable workflows from `slice-soft/ss-pipeline`:
 
 - release automation with [`.github/workflows/release.yml`](.github/workflows/release.yml)
-- Terraform README generation with [`.github/workflows/tf-docs.yml`](.github/workflows/tf-docs.yml)
+- Terraform README generation chained from [`.github/workflows/release.yml`](.github/workflows/release.yml)
 
 The tag flow is based on `release-please` and keeps the major tag such as `v0` updated automatically.
 
