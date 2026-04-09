@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/slice-soft/ss-cloudflare-modules-iac/compare/v1.1.0...v1.2.0) (2026-04-09)
+
+
+### Features
+
+* update pages module to ignore build_config updates and enhance stability for imported projects ([#5](https://github.com/slice-soft/ss-cloudflare-modules-iac/issues/5)) ([4ea90b2](https://github.com/slice-soft/ss-cloudflare-modules-iac/commit/4ea90b25ac6a1aeed432a2742c762a50f177be24))
+
 ## [1.1.0](https://github.com/slice-soft/ss-cloudflare-modules-iac/compare/v1.0.0...v1.1.0) (2026-04-09)
 
 
